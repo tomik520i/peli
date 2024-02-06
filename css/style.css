@@ -1,0 +1,766 @@
+html {
+	background-color: black;
+	color: white;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.grid {
+	grid-area: grid;
+}
+
+.wrapper {
+
+	overflow-x: hidden;
+
+}
+
+.container {
+	width: 300%;
+	background-color: rgb(0, 0, 0);
+	display: flex;
+}
+
+.section11 {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: flex-start;
+	background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+	transition: all 1s linear;
+}
+
+.logo {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.736);
+	height: 200px;
+	border-bottom: 2px solid yellow;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.site {
+	padding-right: 100px;
+	font-size: 30px;
+	display: flex;
+	gap: 60px;
+}
+
+.instagram a {
+	transition: all 0.5s linear;
+	cursor: pointer;
+	color: white;
+	text-decoration: none;
+}
+
+.instagram a:hover {
+	color: yellow;
+}
+
+
+.blok33 {
+	background-color: rgba(0, 0, 0, 0.736);
+	height: 200px;
+	width: 100%;
+	display: flex;
+	border-bottom: 2px solid yellow;
+}
+
+.section11 img {
+	display: flex;
+	height: 150px;
+	padding-left: 30px;
+}
+
+.section112 {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: flex-start;
+	background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+	transition: all 1s linear;
+}
+
+section h1 {
+	padding-top: 5%;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section {
+	width: 100%;
+}
+
+.blok1 {
+	grid-area: blok1;
+
+	background-color: rgb(0, 0, 0);
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+}
+
+.blok2 {
+	grid-area: blok2;
+
+	background-color: rgb(0, 0, 0);
+	top: 0px;
+	right: 0px;
+	z-index: 2;
+}
+
+.wrapper2 {
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper2 i {
+	background-color: rgba(0, 0, 0, 0.621);
+	width: 150px;
+	height: 45px;
+	font-size: 40px;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	color: white;
+	z-index: 3;
+	transition: all 0.3s;
+	padding: 3px;
+}
+
+.wrapper2 i:hover {
+	background-color: #000000;
+}
+
+.wrapper2 i:active {
+	font-size: 50px;
+}
+
+#left {
+	display: none;
+}
+
+.sipky {
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.wrapper2 .left {
+	position: relative;
+	left: 10px;
+	display: flex;
+	z-index: 2;
+	align-items: center;
+}
+
+.wrapper2 .right {
+	position: relative;
+	right: 10px;
+	display: flex;
+	z-index: 2;
+	align-items: center;
+}
+
+.horizontal-snap {
+	width: 100%;
+	display: grid;
+	grid-auto-flow: column;
+	overflow: hidden;
+	scroll-behavior: smooth;
+	grid-area: 1;
+	overscroll-behavior-x: contain;
+	scroll-snap-type: x mandatory;
+	
+}
+
+.dragging {
+	cursor: grab;
+	scroll-behavior: smooth;
+}
+
+.dragging img{
+	pointer-events: none;
+}
+
+.horizontal-snap img {
+	width: 20vw;
+	border-radius: 1rem;
+	padding: 10px;
+	scroll-snap-align: center;
+}
+
+.section33 {
+	height: fit-content;
+}
+
+.section33 {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.section3 p {
+	color: white;
+	padding-left: 10%;
+	padding-right: 10%;
+	margin: 0;
+	padding-top: 20px;
+}
+
+.section2 p {
+	color: black;
+	display: flex;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+}
+
+.section2 {
+	display: grid;
+	background-color: yellow;
+	justify-content: space-between;
+	grid-template-areas: "blok3 section2 blok4";
+	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-rows: 100vh;
+}
+
+.section22 {
+	background-color: yellow;
+	display: flex;
+	height: 100vh;
+	grid-area: section2
+}
+
+.blok3 {
+	clip-path: polygon( 0.00% 100%, 0.00% 0.00%, 100% 100% );
+
+	background-color: black;
+	height: 100%;
+	grid-area: blok3;
+	position: relative;
+	right: 2px;
+}
+
+.blok4 {
+	clip-path: polygon( 100% 0.00%, 0.00% 0.00%, 100% 100% );
+
+	background-color: black;
+	height: 100%;
+	position: relative;
+	left: 2px;
+	grid-area: blok4;
+}
+
+#padding {
+	padding: 0px 10%;
+	padding-top: 30px;
+}
+
+.gallery {
+	width: 100%;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: yellow;
+}
+
+.blok5 {
+	clip-path: polygon( 100% 0.00%, 0.00% 0.00%, 100% 100% );
+	background-color: yellow;
+	width: 100%;
+	padding-bottom: 150px;
+	position: relative;
+	bottom: 2px;
+}
+
+.blok6 {
+	clip-path: polygon( 0.00% 100%, 0.00% 0.00%, 100% 100% );
+	background-color: yellow;
+	width: 100%;
+	padding-top: 150px;
+	position: relative;
+	top: 2px;
+}
+
+.blok7 {
+	clip-path: polygon( 0.00% 100%, 0.00% 0.00%, 100% 100% );
+	background-color: yellow;
+	width: 100%;
+	padding-top: 150px;
+}
+
+.menu {
+	position: fixed;
+	right: 10vw;
+	z-index: 3;
+	width: 0px;
+	height: 100%;
+	opacity: 0;
+	transition: all 0.4s linear;
+}
+
+.menu ul {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	top: 90px;
+	position: relative;
+	font-size: 28px;
+	gap: 10px;
+	list-style: none;
+	transition: all 1s linear;
+	text-shadow: 0px 0px 7px #000000;
+	padding-left: 15px;
+}
+
+.menu ul li:active {
+	font-size: 32px;
+}
+
+.menucheck {
+	opacity: 1;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.904);
+
+}
+
+
+.button {
+	background-color: rgba(0, 0, 0, 0.621);
+	position: absolute;
+	position: fixed;
+	right: 200px;
+	top: 50px;
+	z-index: 4;
+	height: 50px;
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	transition: all 0.5s;
+}
+
+.button:hover {
+	background-color: black;
+}
+
+.menu-button-container {
+	height: 100%;
+	width: 30px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  #menu-toggle {
+	display: none;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+	display: block;
+	background-color: #fff;
+	position: absolute;
+	height: 4px;
+	width: 30px;
+	transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+	border-radius: 2px;
+  }
+  
+  .menu-button::before {
+	content: '';
+	margin-top: -8px;
+  }
+  
+  .menu-button::after {
+	content: '';
+	margin-top: 8px;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+	margin-top: 0px;
+	transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+	background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+	margin-top: 0px;
+	transform: rotate(-405deg);
+  }
+
+.section33{
+	display: flex;
+	align-items: center;
+}
+
+.fotka1 {
+	background-image: url("../img/galerie-img/Brzdič_Galerie.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fotka2 {
+	background-image: url("../img/galerie-img/Alu_Galerie.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fotka3 {
+	background-image: url("../img/galerie-img/Golf6GTD_Galerie2.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fotka4 {
+	background-image: url("../img/galerie-img/75GTIPERG_Galerie3.JPG");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fotka5 {
+	background-image: url("../img/galerie-img/Kadjar_Galerie3.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fotka6 {
+	background-image: url("../img/galerie-img/Scirocco_Galerie4.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.karta1 {
+	width: 400px;
+	height: 400px;
+	padding-top: 30px;
+}
+
+.tlacitko1 label, .tlacitko2 label, .tlacitko3 label, .tlacitko4 label, .tlacitko5 label, .tlacitko6 label {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.tlacitko1, .tlacitko2, .tlacitko3, .tlacitko4, .tlacitko5, .tlacitko6 {
+	position: relative;
+	top: 90%;
+	height: 10%;
+	width: 100%;
+	background-color: rgba(255, 255, 0, 0.463);
+	color: black;
+	font-size: 40px;
+	display: flex;
+	align-items: center;
+	transition: all 0.5s linear;
+}
+
+.tlacitko1:hover, .tlacitko2:hover, .tlacitko3:hover, .tlacitko4:hover, .tlacitko5:hover, .tlacitko6:hover {
+	background-color: yellow;
+}
+
+.tlacitko1 i, .tlacitko2 i, .tlacitko3 i, .tlacitko4 i, .tlacitko5 i, .tlacitko6 i {
+	margin-left: 4%;
+	transition: all 0.2s linear;
+}
+
+.tlacitko1 .tlacitko1check, .tlacitko2 .tlacitko2check, .tlacitko3 .tlacitko3check, .tlacitko4 .tlacitko4check, .tlacitko5 .tlacitko5check, .tlacitko6 .tlacitko6check {
+	transform: rotate(90deg);
+}
+
+.tlacitko1input {
+	display: none;
+}
+
+.kontent1 p, .kontent2 p, .kontent3 p, .kontent4 p, .kontent5 p, .kontent6 p {
+	height: 0px;
+	overflow: hidden;
+}
+
+.kontent1check p, .kontent2check p, .kontent3check p, .kontent4check p, .kontent5check p, .kontent6check p {
+	height: 100%;
+	padding-bottom: 50px;
+	overflow: auto;
+}
+
+.section44 {
+	display: flex;
+	flex-direction: column;
+}
+
+.formular h1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	text-align: center;
+}
+
+#kontaktni-formular .nadpis {
+	display: flex;
+	justify-content: center;
+}
+
+#kontaktni-formular 		{display: flex;
+	justify-content: center;
+	margin: 3em 0;
+	flex-direction: column;}
+
+#content  .kontakt .obsah .formular	{display: flex;
+		justify-content: center;
+		margin-top: 3em;}
+
+#kontaktni-formular form		{width: 100%;}
+
+#kontaktni-formular .formular .prvek	{width: 100%;
+				font-size: 2em;
+				padding: 0.3em;
+				padding-top: 1em;
+				transition: all 0.2s ease;
+				font-family: Arial, Helvetica, sans-serif;}
+
+#kontaktni-formular .formular .radka	{position: relative;
+				margin-top: 1em;}
+
+#kontaktni-formular .formular label	{position: absolute;
+				top: 0.5em;
+				left: 15px;
+				color: black;
+				font-weight: bold;
+				transition: all 0.2s ease;}
+
+#kontaktni-formular form .prvek:placeholder-shown + label	{left: 14px;
+									top: 17px;
+									font-size: 2em;
+									color: rgb(199, 199, 199);}
+
+#kontaktni-formular form .prvek:placeholder-shown		{padding-top: 0.3em;}
+
+#kontaktni-formular form button		{border-radius: 20px;
+				padding: 1em 2em;
+				font-size: 1.3em;
+				font-weight: bold;
+				cursor: pointer;
+				background-color: yellow;}
+
+#kontaktni-formular .formular .status {
+position: absolute;
+right: 0;
+top: 0;
+bottom: 0;
+display: grid;
+align-items: start;
+font-size: 40px;
+}
+
+#kontaktni-formular .formular .status .spravne {
+display: none;
+color: green;
+}
+
+#kontaktni-formular .formular .status .spatne {
+display: none;
+color: red;
+}
+
+#kontaktni-formular .formular .status.ok .spravne {
+display: block;
+}
+
+#kontaktni-formular .formular .status.chyba .spatne {
+display: block;
+}
+
+#kontaktni-formular form {
+width: 100%;
+}
+
+.mapa {
+	width: 100%;
+}
+
+.mapa iframe {
+	border: 2px solid yellow;
+}
+
+.kontakt {
+	font-size: 20px;
+	padding-top: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+table th {
+	padding: 5px;
+}
+
+table td {
+	padding: 5px;
+}
+
+.kontakt table a {
+	text-decoration: none;
+	color: white;
+	transition: all 0.5s ease;
+}
+
+.kontakt table a:hover {
+	text-decoration: underline;
+	color: yellow;
+}
+
+@media (max-width: 950px){
+	.tri table tbody tr {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.tri table tbody tr td {
+		width: 100%;
+	}
+
+	.uscm-secs {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+  @media (max-width: 700px){
+
+	  .container {
+		height: max-content;
+	}
+
+	.section11 {
+		background-image: url("../img/38eed51af5e552d60d9e8c4466afcd74.jpg");
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 100vh;
+	}
+
+	.horizontal-snap img {
+		width: 60vw;
+	}
+
+	.menucheck {
+		width: 200px;
+	}
+
+	.menu ul {
+		font-size: 22px;
+	}
+	
+	.menu ul li:active {
+		font-size: 25px;
+	}
+	
+	.fotka1 {
+		width: 80vw;
+		height: 80vw;
+	}
+	
+	.fotka1 img {
+		width: 80vw;
+		height: 80vw;
+	}
+	
+	.karta1 {
+		width: 80vw;
+		height: 90vw;
+	}
+
+	body {
+		grid-template-rows: 100%;
+	}
+
+	.wrapper2 i {
+		background-color: rgba(0, 0, 0, 0.721);
+		width: 70px;
+		height: 35px;
+		font-size: 20px;
+		border-radius: 20px;
+	}
+	
+	.wrapper2 i:active {
+		font-size: 30px;
+	}
+
+	.tlacitko1, .tlacitko2, .tlacitko3, .tlacitko4, .tlacitko5, .tlacitko6 {
+		top: 80%;
+		height: 20%;
+	}
+
+	.logo {
+		height: 170px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.site {
+		padding: 0;
+		padding-bottom: 30px;
+		padding-top: 20px;
+	}
+
+	.blok33 {
+		height: 170px;
+	}
+
+	.logo img {
+		height: 100px;
+		padding: 0;
+		padding-top: 20px;
+	}
+
+	.site {
+		font-size: 20px;
+	}
+  }
