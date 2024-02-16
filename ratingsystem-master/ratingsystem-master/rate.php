@@ -14,10 +14,10 @@ if(isset($POST['starRate'])) {
 
     
   
-    $starRate = mysqli_real_escape_string($conn, $POSTI['starRate'] ?? "");
-    $rateMsg = mysqli_real_escape_string($conn, $POST['rateMsg'] ?? "");
-    $date = mysqli_real_escape_string($conn, $POST['date'] ?? "");
-    $useName = mysqli_real_escape_string($conn, $POST['name'] ?? "");
+    $starRate = htmlspecialchars(mysqli_real_escape_string($conn, $POSTI['starRate'] ?? ""));
+    $rateMsg = htmlspecialchars(mysqli_real_escape_string($conn, $POST['rateMsg'] ?? ""));
+    $date = htmlspecialchars(mysqli_real_escape_string($conn, $POST['date'] ?? ""));
+    $useName = htmlspecialchars(mysqli_real_escape_string($conn, $POST['name'] ?? ""));
 
     //var_dump($rateMsg);
 
@@ -28,15 +28,15 @@ if(isset($POST['starRate'])) {
     $rst = $res->fetch_assoc();
     $pCode = $rst['userName'];
 
-    if(!$pCode) {
+//    if(!$pCode) {
         $stmt = $conn->prepare("INSERT INTO rate (userName, userReview, userMessage, dateReviewed) VALUES ( ?, ?, ?, ?)");
         $stmt->bind_param("ssss", $useName, $starRate, $rateMsg, $date);
         $stmt->execute();
            
-    }
-    else {
-        $stmt = $conn->prepare("UPDATE rate SET userName=?, userReview=?, userMessage=?, dateReviewed=? WHERE userName=?");
-        $stmt->bind_param("sssss",  $useName, $starRate, $rateMsg, $date, $useName);
-        $stmt->execute();
-    }
+//    }
+//    else {
+//        $stmt = $conn->prepare("UPDATE rate SET userName=?, userReview=?, userMessage=?, dateReviewed=? WHERE userName=?");
+//        $stmt->bind_param("sssss", $useName, $starRate, $rateMsg, $date, $useName);
+//        $stmt->execute();
+//    }
 }

@@ -1,6 +1,6 @@
 <?php
-	require "vendor/autoload.php";
-	session_start();
+require "vendor/autoload.php";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -252,27 +252,36 @@
 
 
 				<div class="section4" id="padding">
-						<?php
-							require("kontaktni-formular.php")
-						?>
+					<?php
+					require("kontaktni-formular.php")
+					?>
 				</div>
 
 				<div class="section4" id="padding">
 					<div class="mapa">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57106.60044442795!2d15.584266257123677!3d49.59899981944226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d0095c8596857%3A0xdfe8fd8510ec6cdb!2zSGF2bMOtxI1rxa92IEJyb2QsIDU4MCAwMSBIYXZsw63EjWvFr3YgQnJvZCAx!5e0!3m2!1sen!2scz!4v1707069414392!5m2!1sen!2scz" width="100%" height="300px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57106.60044442795!2d15.584266257123677!3d49.59899981944226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d0095c8596857%3A0xdfe8fd8510ec6cdb!2zSGF2bMOtxI1rxa92IEJyb2QsIDU4MCAwMSBIYXZsw63EjWvFr3YgQnJvZCAx!5e0!3m2!1sen!2scz!4v1707069414392!5m2!1sen!2scz" width="100%" height="300px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</div>
 					<div class="kontakt">
 						<table>
-							<tr><th><i class="fa-solid fa-envelope"></i> Email:</th><td><a href="mailto: info@lestito.cz">Info@lestito.cz</a></td></tr>
-							<tr><th><i class="fa-solid fa-phone"></i> Telefon:</th><td><a href="tel:+420601106211">+420 601 106 211</a></td></tr>
-							<tr><th><i class="fa-solid fa-map-location-dot"></i> Adresa:</th><td>djfnskjff</td></tr>
+							<tr>
+								<th><i class="fa-solid fa-envelope"></i> Email:</th>
+								<td><a href="mailto: info@lestito.cz">Info@lestito.cz</a></td>
+							</tr>
+							<tr>
+								<th><i class="fa-solid fa-phone"></i> Telefon:</th>
+								<td><a href="tel:+420601106211">+420 601 106 211</a></td>
+							</tr>
+							<tr>
+								<th><i class="fa-solid fa-map-location-dot"></i> Adresa:</th>
+								<td>djfnskjff</td>
+							</tr>
 						</table>
 					</div>
 				</div>
 
 				<div class="section4" id="padding">
 					<?php
-						require("./ratingsystem-master/ratingsystem-master/index.php")
+					require("./ratingsystem-master/ratingsystem-master/index.php")
 					?>
 				</div>
 
@@ -769,8 +778,8 @@
 		resizeObserver2.observe(document.getElementById("kontent2"))
 
 
-				// create an Observer instance
-				const resizeObserver3 = new ResizeObserver(entries => {
+		// create an Observer instance
+		const resizeObserver3 = new ResizeObserver(entries => {
 			console.log(entries[0].target.offsetHeight)
 
 			if (entries[0].target.offsetHeight > 20) {
@@ -807,8 +816,8 @@
 		resizeObserver3.observe(document.getElementById("kontent3"))
 
 
-				// create an Observer instance
-				const resizeObserver4 = new ResizeObserver(entries => {
+		// create an Observer instance
+		const resizeObserver4 = new ResizeObserver(entries => {
 			console.log(entries[0].target.offsetHeight)
 
 			if (entries[0].target.offsetHeight > 20) {
@@ -845,8 +854,8 @@
 		resizeObserver4.observe(document.getElementById("kontent4"))
 
 
-				// create an Observer instance
-				const resizeObserver5 = new ResizeObserver(entries => {
+		// create an Observer instance
+		const resizeObserver5 = new ResizeObserver(entries => {
 			console.log(entries[0].target.offsetHeight)
 
 			if (entries[0].target.offsetHeight > 20) {
@@ -883,8 +892,8 @@
 		resizeObserver5.observe(document.getElementById("kontent5"))
 
 
-				// create an Observer instance
-				const resizeObserver6 = new ResizeObserver(entries => {
+		// create an Observer instance
+		const resizeObserver6 = new ResizeObserver(entries => {
 			console.log(entries[0].target.offsetHeight)
 
 			if (entries[0].target.offsetHeight > 20) {

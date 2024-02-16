@@ -200,138 +200,123 @@ if ($recenze == true) {
     </div>
 
     <div class="bri">
-        <div class="uscm">
-            <?php
-            $sqlp = "SELECT * FROM rate ORDER BY dateReviewed ASC, userReview DESC ";
-            $resultp = $conn->query($sqlp);
-
-
-            if (mysqli_num_rows($resultp) > 0) {
-                while ($row = $resultp->fetch_assoc()) {
-            ?>
-
-                    <div class="uscm-secs">
-                        <div class="us-img">
-                            <p><?= substr($row['userName'], 0, 1); ?></p>
-                        </div>
-                        <div class="uscms">
-                            <div class="us-rate">
-                                <div class="pdt-rate">
-                                    <div class="pro-rating">
-                                        <div class="clearfix rating marT8 ">
-                                            <div class="rating-stars ">
-                                                <div class="grey-stars"></div>
-                                                <div class="filled-stars" style="width:<?= $row['userReview'] * 20 ?>%">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="us-cmt">
-                                <p><?= $row['userMessage'] ?></p>
-                            </div>
-                            <div class="us-nm">
-                                <p><i> By <span class="cmnm"><?= $row['userName'] ?></span> on <span class="cmdt"><?= $row['dateReviewed'] ?></span> </i></p>
-                            </div>
-                        </div>
-                    </div>
-
-
-            <?php
-                }
-            }
-
-            ?>
+        <div class="list-container">
+            <div id="data-list"></div>
         </div>
     </div>
 
-    <div class="list-container">
-            <div id="data-list"></div>
-        </div>
-
-        <div class="buttons">
-            <button id="prev">Prev</button>
-            <input type="number" id="page-number" />
-            <button id="next">Next</button>
-        </div>
+    <div class="buttons">
+        <button id="prev">Zpět</button>
+        <span id="pageNumber">1.</span>
+        <button id="next">Další</button>
+    </div>
 </section>
 
 <script>
-    
-    let dataSet = document.querySelectorAll(".uscm-secs");
-
     let recenze = [];
 
-    dataSet.forEach((kontent, index) => {
-        recenze.push(dataSet[index].innerHTML);
+    function ajax(cislo) {
+        const ajax = new XMLHttpRequest();
+
+        console.log(cislo)
+
+        ajax.open("GET", `ratingsystem-master/ratingsystem-master/recenze.php?cislo=${cislo}`, false);
+
+        ajax.addEventListener("readystatechange", (udalost) => {
+            if (ajax.readyState == 4) {
+                const odpoved = ajax.responseText;
+
+                console.log(odpoved);
+
+                odpoved2 = JSON.parse(odpoved);
+
+                recenze = [];
+
+                odpoved2.forEach((data, index) => {
+                    console.log(data)
+
+                    recenze.push(`<div class="us-rate"><div class="pdt-rate"><div class="pro-rating"><div class="clearfix rating marT8 "><div class="rating-stars "><div class="grey-stars"></div><div class="filled-stars" style="width:${data.userReview * 20}%"></div></div></div></div></div></div><div class="us-cmt"><p>${data.userMessage}</p></div><div class="us-nm"><p><i> By <span class="cmnm">${data.userName}</span> on <span class="cmdt">${data.dateReviewed}</span> </i></p></div></div>`)
+
+                })
+
+                mapData = () => {
+                    const slicedData = recenze
+                        .slice(startIndex, endIndex)
+                        .map((row) => {
+                            return `<div class="uscm-secs">${row}</div>`;
+                        })
+                        .join("");
+
+                    list.innerHTML = slicedData;
+
+                }
+            }
+        });
+
+        ajax.send();
+    }
+
+    let cislo2 = 0;
+    let pageNumber = 1;
+
+    let startIndex = 0;
+    let endIndex = 5;
+
+
+    const prevButton = document.querySelector("#prev");
+    const nextButton = document.querySelector("#next");
+
+    const nextButton2 = document.getElementById("next")
+    const prevButton2 = document.getElementById("prev")
+
+    const pageNumber2 = document.getElementById("pageNumber");
+
+    if (cislo2 + 5 >= <?php echo $numR; ?>) {
+            nextButton2.style.opacity = "0"
+        }
+
+    prevButton2.style.opacity = "0"
+
+    prevButton.addEventListener("click", () => {
+        if (cislo2 <= 5) {
+            cislo2 = 0;
+            ajax(cislo2);
+            console.log(cislo2)
+            pageNumber = 1;
+            prevButton2.style.opacity = "0"
+            nextButton2.style.opacity = "1"
+        } else {
+            cislo2 -= 5;
+            ajax(cislo2);
+            console.log(cislo2)
+            pageNumber -= 1;
+            nextButton2.style.opacity = "1"
+        }
+        mapData();
+        pageNumber2.innerText = `${pageNumber}.`;
     })
 
-    console.log(recenze);
+    nextButton.addEventListener("click", () => {
+        console.log(recenze.length)
 
+        if (5 == recenze.length && cislo2 + 5 < <?php echo $numR; ?>) {
+            cislo2 += 5;
+            ajax(cislo2);
+            console.log(cislo2)
+            pageNumber += 1;
+            prevButton2.style.opacity = "1"
+        }
+        if (cislo2 + 5 >= <?php echo $numR; ?>) {
+            nextButton2.style.opacity = "0"
+        }
+        mapData();
+        pageNumber2.innerText = `${pageNumber}.`;
+    })
+
+    ajax(cislo2)
 
     const list = document.querySelector("#data-list");
-const prevButton = document.querySelector("#prev");
-const nextButton = document.querySelector("#next");
-const pageNumberValue = document.querySelector("#page-number")
 
-let startIndex = 0;
-let endIndex = 5;
-let pageNumber = 0;
+    mapData();
 
-pageNumberValue.value = pageNumber
-
-const mapData = () => {
-  const slicedData = recenze
-    .slice(startIndex, endIndex)
-    .map((row) => {
-      return `<div class="uscm-secs">${row}</div>`;
-    })
-    .join("");
-
-  list.innerHTML = slicedData;
-}
-
-mapData();
-
-prevButton.addEventListener("click", () => {
-  if (endIndex < 10) {
-    startIndex = 0;
-    endIndex = 5;
-  } else {
-    startIndex -= 5;
-    endIndex -= 5;
-    pageNumber -= 1;
-  }
-  pageNumberValue.value = pageNumber;
-  mapData();
-});
-
-nextButton.addEventListener("click", () => {
-  if (endIndex < recenze.length) {
-    startIndex += 5;
-    endIndex += 5;
-    pageNumber += 1;
-  }
-  pageNumberValue.value = pageNumber;
-  mapData();
-});
-
-
-pageNumberValue.addEventListener("change",(e) => {
-  let currentPageNumber = Number.parseInt(e.target.value)
-  let maxPageNumber = Math.floor(recenze.length/5)
-  if(currentPageNumber > maxPageNumber){
-   currentPageNumber = maxPageNumber;
-    e.target.value = value
-  }
-  else if(currentPageNumber < 0){
-    currentPageNumber = 0;
-    e.target.value = value
-  }
-   startIndex = currentPageNumber * 5;
-   endIndex = startIndex + 5
-   pageNumber = currentPageNumber
-   mapData();
-})
 </script>
