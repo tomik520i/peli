@@ -11,7 +11,7 @@ $db = new PDO(
 $cislo = $_GET["cislo"];
 
 $dotaz = $db->prepare("SELECT * FROM rate ORDER BY datumcas DESC LIMIT $cislo, 5 ");
-$dotaz->execute(); 
+$dotaz->execute();
 
 $vysledek = $dotaz->fetchAll();
 

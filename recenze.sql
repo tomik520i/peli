@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1
--- Vytvořeno: Pon 05. úno 2024, 17:43
+-- Vytvořeno: Pát 01. bře 2024, 23:37
 -- Verze serveru: 10.4.28-MariaDB
 -- Verze PHP: 8.2.4
 
@@ -32,8 +32,16 @@ CREATE TABLE `rate` (
   `userName` tinytext NOT NULL,
   `userReview` tinytext NOT NULL,
   `userMessage` longtext NOT NULL,
-  `dateReviewed` tinytext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `dateReviewed` tinytext NOT NULL,
+  `datumcas` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Vypisuji data pro tabulku `rate`
+--
+
+INSERT INTO `rate` (`id`, `userName`, `userReview`, `userMessage`, `dateReviewed`, `datumcas`) VALUES
+(89, 'kmlk', '5', 'jlnlkl', 'Tuesday, February 27, 2024', '2024-02-27 18:13:45');
 
 --
 -- Indexy pro exportované tabulky
@@ -53,7 +61,7 @@ ALTER TABLE `rate`
 -- AUTO_INCREMENT pro tabulku `rate`
 --
 ALTER TABLE `rate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

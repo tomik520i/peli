@@ -110,7 +110,7 @@ if ($recenze == true) {
                         </div>
                         <div class="rnrn">
                             <p class="rars"> <?php if ($numR == 0) {
-                                                    echo "No";
+                                                    echo "0";
                                                 } else {
                                                     echo $numR;
                                                 }; ?>x Hodnoceno</p>
@@ -218,7 +218,7 @@ if ($recenze == true) {
     function ajax(cislo) {
         const ajax = new XMLHttpRequest();
 
-        console.log(cislo)
+        //console.log(cislo)
 
         ajax.open("GET", `ratingsystem-master/ratingsystem-master/recenze.php?cislo=${cislo}`, false);
 
@@ -226,16 +226,16 @@ if ($recenze == true) {
             if (ajax.readyState == 4) {
                 const odpoved = ajax.responseText;
 
-                console.log(odpoved);
+                //console.log(odpoved);
 
                 odpoved2 = JSON.parse(odpoved);
 
                 recenze = [];
 
                 odpoved2.forEach((data, index) => {
-                    console.log(data)
+                    //console.log(data)
 
-                    recenze.push(`<div class="us-rate"><div class="pdt-rate"><div class="pro-rating"><div class="clearfix rating marT8 "><div class="rating-stars "><div class="grey-stars"></div><div class="filled-stars" style="width:${data.userReview * 20}%"></div></div></div></div></div></div><div class="us-cmt"><p>${data.userMessage}</p></div><div class="us-nm"><p><i> By <span class="cmnm">${data.userName}</span> on <span class="cmdt">${data.dateReviewed}</span> </i></p></div></div>`)
+                    recenze.push(`<div class="us-rate"><div class="pdt-rate"><div class="pro-rating"><div class="clearfix rating marT8 "><div class="rating-stars "><div class="grey-stars"></div><div class="filled-stars" style="width:${data.userReview * 20}%"></div></div></div></div></div></div><div class="us-cmt"><p>${data.userMessage}</p></div><div class="us-nm"><p><i> By <span class="cmnm">${data.userName}</span> on <span class="cmdt">${data.dateReviewed}</span> </i></p></div><?php if (array_key_exists('prihlasenyUzivatel', $_SESSION)) {echo "<div class='smazat'><form method='post'><input type='hidden' name='id' "?>value='${data.id}'><?php echo "<button name='smazat'>Smazat</button></form></div>";} ?></div>`)
 
                 })
 
@@ -281,14 +281,14 @@ if ($recenze == true) {
         if (cislo2 <= 5) {
             cislo2 = 0;
             ajax(cislo2);
-            console.log(cislo2)
+            //console.log(cislo2)
             pageNumber = 1;
             prevButton2.style.opacity = "0"
             nextButton2.style.opacity = "1"
         } else {
             cislo2 -= 5;
             ajax(cislo2);
-            console.log(cislo2)
+            //console.log(cislo2)
             pageNumber -= 1;
             nextButton2.style.opacity = "1"
         }
@@ -297,12 +297,12 @@ if ($recenze == true) {
     })
 
     nextButton.addEventListener("click", () => {
-        console.log(recenze.length)
+        //console.log(recenze.length)
 
         if (5 == recenze.length && cislo2 + 5 < <?php echo $numR; ?>) {
             cislo2 += 5;
             ajax(cislo2);
-            console.log(cislo2)
+            //console.log(cislo2)
             pageNumber += 1;
             prevButton2.style.opacity = "1"
         }

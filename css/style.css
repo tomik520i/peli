@@ -1,7 +1,17 @@
+/* jost-regular - latin_latin-ext */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/jost-v15-latin_latin-ext-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
 html {
 	background-color: black;
 	color: white;
 	-webkit-tap-highlight-color: transparent;
+	font-family: Jost;
 }
 
 body {
@@ -216,12 +226,11 @@ section {
 	min-height: 100%;
 }
 
-.section3 p {
+.section3 p, .section3 ul {
 	color: white;
 	padding-left: 10%;
 	padding-right: 10%;
 	margin: 0;
-	padding-top: 20px;
 }
 
 .section2 p {
@@ -245,7 +254,10 @@ section {
 	background-color: yellow;
 	display: flex;
 	height: 100vh;
-	grid-area: section2
+	grid-area: section2;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
 }
 
 .blok3 {
@@ -419,7 +431,7 @@ section {
 }
 
 .fotka1 {
-	background-image: url("../img/galerie-img/Brzdič_Galerie.jpg");
+	background-image: url("../img/karty/75GTIPERF_Galerie1.JPG");
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -428,7 +440,7 @@ section {
 }
 
 .fotka2 {
-	background-image: url("../img/galerie-img/Alu_Galerie.jpg");
+	background-image: url("../img/karty/75GTIPERF_Galerie2.JPG");
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -437,7 +449,7 @@ section {
 }
 
 .fotka3 {
-	background-image: url("../img/galerie-img/Golf6GTD_Galerie2.jpg");
+	background-image: url("../img/karty/NOVA75GTIPERF_Galerie7.jpeg");
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -446,7 +458,7 @@ section {
 }
 
 .fotka4 {
-	background-image: url("../img/galerie-img/75GTIPERG_Galerie3.JPG");
+	background-image: url("../img/karty/merenilaku.jpg");
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -455,7 +467,7 @@ section {
 }
 
 .fotka5 {
-	background-image: url("../img/galerie-img/Kadjar_Galerie3.jpg");
+	background-image: url("../img/karty/7GTIPERF_Galerie2.jpg");
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -463,6 +475,7 @@ section {
     background-repeat: no-repeat;
 }
 
+/*
 .fotka6 {
 	background-image: url("../img/galerie-img/Scirocco_Galerie4.jpg");
 	width: 100%;
@@ -471,6 +484,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
 }
+*/
 
 .karta1 {
 	width: 400px;
@@ -479,19 +493,21 @@ section {
 }
 
 .tlacitko1 label, .tlacitko2 label, .tlacitko3 label, .tlacitko4 label, .tlacitko5 label, .tlacitko6 label {
-	width: 100%;
+	width: 20%;
 	height: 100%;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	padding: 10px;
+justify-content: center;
 }
 
 .tlacitko1, .tlacitko2, .tlacitko3, .tlacitko4, .tlacitko5, .tlacitko6 {
 	position: relative;
-	top: 90%;
-	height: 10%;
+	top: 75%;
+	height: 25%;
 	width: 100%;
-	background-color: rgba(255, 255, 0, 0.463);
+	background-color: rgba(255, 255, 0, 0.700);
 	color: black;
 	font-size: 40px;
 	display: flex;
@@ -523,9 +539,26 @@ section {
 
 .kontent1check p, .kontent2check p, .kontent3check p, .kontent4check p, .kontent5check p, .kontent6check p {
 	height: 100%;
-	padding-bottom: 50px;
 	overflow: auto;
+	padding-top: 20px;
 }
+
+.kontent1 ul, .kontent2 ul, .kontent3 ul, .kontent4 ul, .kontent5 ul, .kontent6 ul {
+	height: 0px;
+	overflow: hidden;
+}
+
+.kontent1check ul, .kontent2check ul, .kontent3check ul, .kontent4check ul, .kontent5check ul, .kontent6check ul {
+	height: 100%;
+	overflow: auto;
+	padding-top: 20px;
+	list-style: none;
+}
+
+.kontent1check li, .kontent2check li, .kontent3check li, .kontent4check li, .kontent5check li, .kontent6check li {
+	padding-top: 10px;
+}
+
 
 .section44 {
 	display: flex;
@@ -653,6 +686,50 @@ table td {
 	color: yellow;
 }
 
+.grid form {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	gap: 10px;
+}
+
+.karta1 h1 {
+	font-size: 30px;
+	color: black;
+	padding: 0px;
+    height: 100%;
+    border-left: 4px solid black;
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.uvodtlacitka {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.stranka1, .stranka2, .stranka3, .stranka4 {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+#uvodtlacitko1, #uvodtlacitko2 {
+		background-color: #000000;
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		border-radius: 10px;
+}
+
 @media (max-width: 950px){
 	.tri table tbody tr {
 		display: flex;
@@ -733,8 +810,8 @@ table td {
 	}
 
 	.tlacitko1, .tlacitko2, .tlacitko3, .tlacitko4, .tlacitko5, .tlacitko6 {
-		top: 80%;
-		height: 20%;
+		top: 70%;
+		height: 30%;
 	}
 
 	.logo {
@@ -762,5 +839,29 @@ table td {
 
 	.site {
 		font-size: 20px;
+		position: relative;
+		top: 60vh;
+		text-align: center;
 	}
-  }
+
+	.section22 {
+		padding-top: 30px;
+	padding-bottom: 30px;
+	}
+
+	.karta1 h1 {
+		font-size: 22px;
+		color: black;
+	}
+#uvodtlacitko1, #uvodtlacitko2 {
+		background-color: #000000;
+		border: none;
+		color: white;
+		padding: 10px 20px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 13px;
+		border-radius: 10px;
+}
+  }					
